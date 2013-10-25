@@ -19,6 +19,7 @@
 		D35A51E8181B109D00A23B4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35A51D0181B109C00A23B4C /* UIKit.framework */; };
 		D35A51F0181B109D00A23B4C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D35A51EE181B109D00A23B4C /* InfoPlist.strings */; };
 		D35A51F2181B109D00A23B4C /* BlogReader2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D35A51F1181B109D00A23B4C /* BlogReader2Tests.m */; };
+		D35A51FC181B114600A23B4C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D35A51FB181B114600A23B4C /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D35A51ED181B109D00A23B4C /* BlogReader2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlogReader2Tests-Info.plist"; sourceTree = "<group>"; };
 		D35A51EF181B109D00A23B4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D35A51F1181B109D00A23B4C /* BlogReader2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlogReader2Tests.m; sourceTree = "<group>"; };
+		D35A51FB181B114600A23B4C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				D35A51DC181B109C00A23B4C /* FMAppDelegate.m */,
 				D35A51DE181B109C00A23B4C /* Images.xcassets */,
 				D35A51D3181B109C00A23B4C /* Supporting Files */,
+				D35A51FB181B114600A23B4C /* MainStoryboard.storyboard */,
 			);
 			path = BlogReader2;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35A51FC181B114600A23B4C /* MainStoryboard.storyboard in Resources */,
 				D35A51D7181B109C00A23B4C /* InfoPlist.strings in Resources */,
 				D35A51DF181B109C00A23B4C /* Images.xcassets in Resources */,
 			);
