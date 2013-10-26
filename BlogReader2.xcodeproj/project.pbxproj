@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D34C8335181C387E00C6D930 /* FMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34C8334181C387E00C6D930 /* FMTableViewController.m */; };
 		D34C8338181C595100C6D930 /* FMBlogPost.m in Sources */ = {isa = PBXBuildFile; fileRef = D34C8337181C595100C6D930 /* FMBlogPost.m */; };
+		D34C833A181C722200C6D930 /* treehouse.png in Resources */ = {isa = PBXBuildFile; fileRef = D34C8339181C722200C6D930 /* treehouse.png */; };
 		D35A51CD181B109C00A23B4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35A51CC181B109C00A23B4C /* Foundation.framework */; };
 		D35A51CF181B109C00A23B4C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35A51CE181B109C00A23B4C /* CoreGraphics.framework */; };
 		D35A51D1181B109C00A23B4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35A51D0181B109C00A23B4C /* UIKit.framework */; };
@@ -39,6 +40,7 @@
 		D34C8334181C387E00C6D930 /* FMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTableViewController.m; sourceTree = "<group>"; };
 		D34C8336181C595100C6D930 /* FMBlogPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMBlogPost.h; sourceTree = "<group>"; };
 		D34C8337181C595100C6D930 /* FMBlogPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMBlogPost.m; sourceTree = "<group>"; };
+		D34C8339181C722200C6D930 /* treehouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treehouse.png; sourceTree = "<group>"; };
 		D35A51C9181B109C00A23B4C /* BlogReader2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogReader2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35A51CC181B109C00A23B4C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D35A51CE181B109C00A23B4C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				D35A51D4181B109C00A23B4C /* BlogReader2-Info.plist */,
+				D34C8339181C722200C6D930 /* treehouse.png */,
 				D35A51D5181B109C00A23B4C /* InfoPlist.strings */,
 				D35A51D8181B109C00A23B4C /* main.m */,
 				D35A51DA181B109C00A23B4C /* BlogReader2-Prefix.pch */,
@@ -236,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34C833A181C722200C6D930 /* treehouse.png in Resources */,
 				D35A51FC181B114600A23B4C /* MainStoryboard.storyboard in Resources */,
 				D35A51D7181B109C00A23B4C /* InfoPlist.strings in Resources */,
 				D35A51DF181B109C00A23B4C /* Images.xcassets in Resources */,
