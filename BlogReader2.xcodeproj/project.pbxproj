@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D34C8335181C387E00C6D930 /* FMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D34C8334181C387E00C6D930 /* FMTableViewController.m */; };
 		D35A51CD181B109C00A23B4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35A51CC181B109C00A23B4C /* Foundation.framework */; };
 		D35A51CF181B109C00A23B4C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35A51CE181B109C00A23B4C /* CoreGraphics.framework */; };
 		D35A51D1181B109C00A23B4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35A51D0181B109C00A23B4C /* UIKit.framework */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D34C8333181C387E00C6D930 /* FMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTableViewController.h; sourceTree = "<group>"; };
+		D34C8334181C387E00C6D930 /* FMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTableViewController.m; sourceTree = "<group>"; };
 		D35A51C9181B109C00A23B4C /* BlogReader2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogReader2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35A51CC181B109C00A23B4C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D35A51CE181B109C00A23B4C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -114,6 +117,8 @@
 				D35A51DE181B109C00A23B4C /* Images.xcassets */,
 				D35A51D3181B109C00A23B4C /* Supporting Files */,
 				D35A51FB181B114600A23B4C /* MainStoryboard.storyboard */,
+				D34C8333181C387E00C6D930 /* FMTableViewController.h */,
+				D34C8334181C387E00C6D930 /* FMTableViewController.m */,
 			);
 			path = BlogReader2;
 			sourceTree = "<group>";
@@ -195,6 +200,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Fredrick Myers";
 				TargetAttributes = {
+					D35A51C8181B109C00A23B4C = {
+						DevelopmentTeam = A4V952P94H;
+					};
 					D35A51E3181B109D00A23B4C = {
 						TestTargetID = D35A51C8181B109C00A23B4C;
 					};
@@ -246,6 +254,7 @@
 			files = (
 				D35A51D9181B109C00A23B4C /* main.m in Sources */,
 				D35A51DD181B109C00A23B4C /* FMAppDelegate.m in Sources */,
+				D34C8335181C387E00C6D930 /* FMTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,10 +373,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BlogReader2/BlogReader2-Prefix.pch";
 				INFOPLIST_FILE = "BlogReader2/BlogReader2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -377,10 +389,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BlogReader2/BlogReader2-Prefix.pch";
 				INFOPLIST_FILE = "BlogReader2/BlogReader2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -446,6 +461,7 @@
 				D35A51F7181B109D00A23B4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D35A51F8181B109D00A23B4C /* Build configuration list for PBXNativeTarget "BlogReader2Tests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +470,7 @@
 				D35A51FA181B109D00A23B4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
