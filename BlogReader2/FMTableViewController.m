@@ -7,6 +7,7 @@
 //
 
 #import "FMTableViewController.h"
+#import "FMBlogPost.h"
 
 @interface FMTableViewController ()
 
@@ -26,17 +27,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.mobileTitles = [NSArray arrayWithObjects:@"The Missing Widget in the Android SDK: SmartImageView",
-                   @"Get Started with iOS Development", nil];
     
-    self.designTitles = [NSArray arrayWithObjects:@"Getting a Job In Web Design and Development",
-                         @"Treehouse Show Episode 13 &#8211; LLJS, Navicons and Framework Flights", nil];
+    NSURL *blogURL = [NSURL URLWithString:@"http://blog.teamtreehouse.com/api/get_recent_summary/"];
+    NSData *jsonData = [NSData dataWithContentsOfURL:blogURL];
+    NSError *error = nil;
+    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    NSLog(@"%@", dataDictionary);
     
-    self.devTitles = [NSArray arrayWithObjects: @"An Interview with Shay Howe",
-                         @"Treehouse Friends: Paul Irish", nil];
+    self.blogPosts = [NSMutableArray array];
     
+    NSArray *blogPostsArray = [dataDictionary objectForKey:@"posts"];
     
+    for (NSDictionary *bpDictionary in blogPostsArray) {
+        FMBlogPost *blogPost = [FMBlogPost blogPostWithTitle:[bpDictionary objectForKey:@"title"]];
+        blogPost.author = [bpDictionary objectForKey:@"author"];
+        [self.blogPosts addObject:blogPost];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,37 +55,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return self.designTitles.count;
-    }
-    
-    if (section == 1) {
-        return self.devTitles.count;
-    }
-    
-    else {
-        return self.mobileTitles.count;
-    }
-}
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    if (section == 0) {
-        return @"Design";
-    }
-    
-    if (section == 1) {
-        return @"Development";
-    }
-    
-    else {
-        return @"Mobile";
-    }
+    return self.blogPosts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -87,70 +69,11 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    if (indexPath.section == 0) {
-        cell.textLabel.text = [self.designTitles objectAtIndex:indexPath.row];
-    }
-    
-    if (indexPath.section == 1) {
-        cell.textLabel.text = [self.devTitles objectAtIndex:indexPath.row];
-    }
-    
-    else {
-        cell.textLabel.text = [self.mobileTitles objectAtIndex:indexPath.row];
-    }
+    FMBlogPost *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
+    cell.textLabel.text = blogPost.title;
+    cell.detailTextLabel.text = blogPost.author;
 
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end
