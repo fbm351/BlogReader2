@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface FMTableViewController : UITableViewController
-@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) NSArray *designTitles;
+@property (nonatomic, strong) NSArray *mobileTitles;
+@property (nonatomic, strong) NSArray *devTitles;
+
+
 
 @end

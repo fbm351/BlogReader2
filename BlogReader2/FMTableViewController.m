@@ -27,16 +27,16 @@
 {
     [super viewDidLoad];
 
-    self.titles = [NSArray arrayWithObjects:@"Getting Started with WordPress",
-                   @"Whitespace in Web Design: What It Is and Why You Should Use It",
-                   @"Adaptive Images and Responsive SVGs - Treehouse Show Episode 15",
-                   @"Productivity is About Contraints and Concentration",
-                   @"A Guide to Becoming the Smartest Developer on the Planet",
-                   @"Teacher Spotlight: Zac Gordon",
-                   @"Do You Love What You Do?",
-                   @"Applying Normalize.css Reset - Quick Tip",
-                   @"How I Wrote a Book in 3 Days",
-                   @"Responsive Techniques, JavaScript MVC Frameworks, Firefox 16 | Treehouse Show Episode 14", nil];
+    self.mobileTitles = [NSArray arrayWithObjects:@"The Missing Widget in the Android SDK: SmartImageView",
+                   @"Get Started with iOS Development", nil];
+    
+    self.designTitles = [NSArray arrayWithObjects:@"Getting a Job In Web Design and Development",
+                         @"Treehouse Show Episode 13 &#8211; LLJS, Navicons and Framework Flights", nil];
+    
+    self.devTitles = [NSArray arrayWithObjects: @"An Interview with Shay Howe",
+                         @"Treehouse Friends: Paul Irish", nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,12 +49,37 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.titles.count;
+    if (section == 0) {
+        return self.designTitles.count;
+    }
+    
+    if (section == 1) {
+        return self.devTitles.count;
+    }
+    
+    else {
+        return self.mobileTitles.count;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return @"Design";
+    }
+    
+    if (section == 1) {
+        return @"Development";
+    }
+    
+    else {
+        return @"Mobile";
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,8 +87,18 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [self.titles objectAtIndex:indexPath.row];
+    if (indexPath.section == 0) {
+        cell.textLabel.text = [self.designTitles objectAtIndex:indexPath.row];
+    }
     
+    if (indexPath.section == 1) {
+        cell.textLabel.text = [self.devTitles objectAtIndex:indexPath.row];
+    }
+    
+    else {
+        cell.textLabel.text = [self.mobileTitles objectAtIndex:indexPath.row];
+    }
+
     return cell;
 }
 
