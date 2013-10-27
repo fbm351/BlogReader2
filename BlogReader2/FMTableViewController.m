@@ -32,7 +32,7 @@
     NSData *jsonData = [NSData dataWithContentsOfURL:blogURL];
     NSError *error = nil;
     NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-    NSLog(@"%@", dataDictionary);
+    //NSLog(@"%@", dataDictionary);
     
     self.blogPosts = [NSMutableArray array];
     
@@ -90,20 +90,8 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    FMBlogPost *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
-    UIApplication *application = [UIApplication sharedApplication];
-    [application openURL:blogPost.url];
-
-    
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"Preparing for segue: %@", segue.identifier);
 }
 
 @end
