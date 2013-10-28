@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:self.blogPostURL];
+    [self.webView loadRequest:urlRequest];
 }
 
 - (void)didReceiveMemoryWarning

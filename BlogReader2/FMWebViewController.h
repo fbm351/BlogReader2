@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FMWebViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) NSURL *blogPostURL;
 
 @end

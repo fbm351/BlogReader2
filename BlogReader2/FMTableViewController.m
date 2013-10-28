@@ -8,6 +8,7 @@
 
 #import "FMTableViewController.h"
 #import "FMBlogPost.h"
+#import "FMWebViewController.h"
 
 @interface FMTableViewController ()
 
@@ -91,7 +92,12 @@
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"Preparing for segue: %@", segue.identifier);
+    if ([segue.identifier isEqualToString:@"showBlogPost"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        FMBlogPost *blogPost = [self.blogPosts objectAtIndex:indexPath.row];
+
+        [segue.destinationViewController setBlogPostURL:blogPost.url];
+    }
 }
 
 @end
